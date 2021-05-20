@@ -1,4 +1,5 @@
-import { useLatestProductsQuery } from "../../generate/graphql";
+import { useLatestProductsQuery } from '@generate/graphql'
+import { HTMLAttributes } from 'react'
 
 const LatestProducts = /* GraphQL */ `
   query LatestProducts {
@@ -19,16 +20,18 @@ const LatestProducts = /* GraphQL */ `
       }
     }
   }
-`;
+`
+
+export interface ProductListProps extends HTMLAttributes<HTMLDivElement> {}
 
 export function ProductList() {
-  const { data, loading, error } = useLatestProductsQuery();
+  const { data, loading, error } = useLatestProductsQuery()
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error! {error.message}</div>;
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error! {error.message}</div>
 
   if (data) {
-    const latestProducts = data.products.edges || [];
+    const latestProducts = data.products.edges || []
 
     return (
       <ul className="grid grid-cols-5 gap-4">
@@ -47,6 +50,6 @@ export function ProductList() {
           )
         )}
       </ul>
-    );
+    )
   }
 }

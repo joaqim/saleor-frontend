@@ -18,6 +18,15 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
+  "paths": {
+    "@blocks/*": ["blocks/*"],
+    "@components/*": ["src/components/*"],
+    "@styles/*": ["src/styles/*"],
+    "@lib/*": ["src/lib/*"],
+    "@modules/*": ["src/modules/*"],
+    "@pages/*": ["pages/*"],
+    "@generate/*": ["generate/*"],
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
